@@ -1,4 +1,23 @@
-## crypticKey
+## CRYPTICKEY - Password Generator
+
+Este projeto é uma ferramenta administrativa para geração de hashes de senha utilizando diferentes algoritmos criptográficos.
+
+A aplicação permite que o usuário informe uma senha e escolha o tipo de criptografia desejado. Após a geração, o sistema retorna o hash correspondente, que pode ser utilizado para testes, integração com sistemas ou criação manual de registros de autenticação.
+
+### Algoritmos suportados
+
+Atualmente a ferramenta suporta os seguintes tipos de hash:
+
+- Bcrypt (Laravel) – padrão utilizado pelo framework Laravel para armazenamento seguro de senhas.
+- MD5
+- SHA1
+- SHA256
+- SHA512
+- Objetivo
+
+O objetivo da ferramenta é facilitar a geração rápida de hashes de senha durante o desenvolvimento ou manutenção do sistema, evitando a necessidade de scripts externos ou comandos no terminal.
+
+---
 
 Este projeto foi desenvolvido utilizando **Laravel 12** no backend e **Vue.js 3.4** no frontend, com interface baseada em **Template Material**.
 
