@@ -35,19 +35,27 @@
             <v-list class="d-flex flex-column h-100">
 
                 <v-list-item class="justify-center">
-                    <center><h2>### crypticKey ###</h2></center>
+                    <center><h2>CRYPTIKEY</h2></center>
                 </v-list-item>
 
                 <div class="mt-2">
                     <v-list-item :href="route('admin.dashboard')">
                         <template #prepend>
-                            <v-icon>mdi-lock-reset</v-icon>
+                            <v-icon>mdi mdi-view-dashboard</v-icon>
                         </template>
 
                         <v-list-item-title class="text-body-2">
-                            Create Password
+                            Dashboard
                         </v-list-item-title>
                     </v-list-item>
+                    <v-list-item
+                    :href="route('admin.createkey')"
+                    prepend-icon="mdi-lock-reset"
+                    >
+                    <v-list-item-title class="text-body-2">
+                        Create Password
+                    </v-list-item-title>
+                </v-list-item>
                 </div>
 
                 <v-spacer />

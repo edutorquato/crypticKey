@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 // ADMIN
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\CreateKeyController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -55,9 +56,16 @@ Route::middleware(['auth', 'admin'])
 ->prefix('admin')
 ->name('admin.')
 ->group(function () {
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/users', [UsersController::class, 'index'])->name('users');
     Route::get('/users/{user}', [UsersController::class, 'show'])->name('users.show');
+    Route::get('/createkey', function () {
+        return Inertia::render('Admin/CreateKey/Index');
+    })->name('createkey');
+    
+    Route::post('/createkey', [CreateKeyController::class, 'store']) ->name('createkey.generate');
+
 });
 
 Route::get('/logout', function () {
